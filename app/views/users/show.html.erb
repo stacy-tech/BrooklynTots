@@ -1,1 +1,5 @@
 <h1>Hello <%= @user.username %></h1>
+
+<div class="center">
+    <%= link_to "Create a New Post", new_user_post_path(current_user) %>   
+</div>

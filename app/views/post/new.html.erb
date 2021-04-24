@@ -1,0 +1,29 @@
+<!-- A view to create a new post -->
+
+<h1>create a new post</h1>
+<p> Please use this form for regular sitter requests.</p>
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-3">
+
+    <%= form_for([current_user, @post) do |f| %>
+      <br>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <br>
+
+      <br>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+      </div>
+      <br>
+      
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
