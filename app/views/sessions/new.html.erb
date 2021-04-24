@@ -1,0 +1,16 @@
+<h1>Log In</h1>
+<div class="row">
+    <%= form_for :login do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :email, autofocus: true %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    
+        <%= f.submit "Log In",class: "btn btn-primary" %><br> <br>
+        
+        
+        
+        <p>New user? <%= link_to "JOIN HERE!", signup_path %></p>
+    <% end %>
+</div>
