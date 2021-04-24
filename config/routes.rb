@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   # login route
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-
+  
+  # authentication login
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+  
+  # logout route
+  delete '/logout' => 'sessions#destroy'
 
 end
