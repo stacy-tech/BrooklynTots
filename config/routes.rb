@@ -14,8 +14,13 @@ Rails.application.routes.draw do
   
   # authentication login
   get '/auth/:provider/callback' => 'sessions#omniauth'
-  
+
   # logout route
   delete '/logout' => 'sessions#destroy'
+
+  # nested routes 
+  resources :users do 
+    resources :posts, only: [:index, :new, :create]
+  end
 
 end
