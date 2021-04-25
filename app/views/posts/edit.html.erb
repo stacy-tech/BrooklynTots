@@ -1,18 +1,24 @@
-<h1>Edit post <%=@post.title %></h1>
+<h1>Edit Previous Post</h1>
 
-<%= form_for(@post) do |f| %> 
-    
-    <%= f.label :title, "Title: " %>
-    <%= f.text_field :title, placeholder: "#{@user.post(title)}"%> 
+<%= form_for Post.new do |f| %> 
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
     <br>
     <br>
-    <%= f.label :content, "Content: " %>
-    <%= f.text_field :description, placeholder: "#{@user.post(content)}" %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
     <br>
     <br>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Save" %>
+
+    <br><br>
+    <div class="center">
+        <%= link_to "Delete Post", post_path(current_user) %>     
+    </div>
+
 <% end %>
 
-<p class="button"><%= button_to 'Delete Post', post_path(@post), method: 'delete' %></p>
+
 
 

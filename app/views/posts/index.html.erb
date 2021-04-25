@@ -2,10 +2,12 @@
 
 <ul>
     <% @posts.each do |post| %>
-        <li><%= post.title %></li>
-        <li><%= post.content %></li>
+        <h2>
+            <%= link_to post.title, post %>
+            <%= post.content %>
+        </h2>
     <% end %>
-</ul> 
+</ul>
 <br><br>
 
 <div class="center">
