@@ -23,4 +23,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :new, :create]
   end
 
+  resources :posts do 
+    resources :comments, shallow: true
+  end
+
 end
