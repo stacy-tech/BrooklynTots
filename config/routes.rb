@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # nested routes 
   resources :users do 
-    resources :posts, only: [:index, :new, :create]
+    resources :posts, only: [:index, :new, :create, :show, :destroy]
   end
 
   resources :posts do 

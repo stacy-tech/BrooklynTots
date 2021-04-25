@@ -20,10 +20,23 @@ class PostsController < ApplicationController
     end
 
     def show
-        @posts = Post.find_by_id(params[:id])
+        @posts = Post.find(params[:id])
+    end
+
+    def edit
+        @posts = Post.find(params[:id])
     end
 
     def update
+        @post = Post.find(params[:id])
+        if @post.update(post_params)
+            flash[:notice] = "Post Successfully updated."
+            redirect_to post_path
+        else
+            flash[:error]= post.errors.full_messages.to_sentence
+            render :edit
+        end
+
     end
 
     private
