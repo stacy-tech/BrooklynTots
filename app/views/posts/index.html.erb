@@ -3,10 +3,11 @@
 <div>
     <ul>
         <% @posts.each do |post| %>
-            <h2>
-                <li><%= link_to post.title, post %></li>
-                
-            </h2>
+            <div>
+                <h2>
+                    <%= link_to post.title, post_path(post) %>   
+                </h2>
+            </div>
         <% end %>
     </ul>
 </div>
