@@ -40,6 +40,18 @@ class PostsController < ApplicationController
 
     end
 
+    def destroy
+        post = Post.find(params[:id])
+        if current_user == post.user
+            post.destroy
+            flash[:sucess]="Successfully deleted."
+        else
+            flash[:error]= workout.errors.full_messages.to_sentence
+        end
+        redirect_to posts_path
+
+    end
+
     private
 
     def post_params 

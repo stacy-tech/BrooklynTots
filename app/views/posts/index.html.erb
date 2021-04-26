@@ -1,13 +1,15 @@
 <h1>Listing</h1>
 
-<ul>
-    <% @posts.each do |post| %>
-        <h2>
-            <%= link_to post.title, post %>
-            <%= post.content %>
-        </h2>
-    <% end %>
-</ul>
+<div>
+    <ul>
+        <% @posts.each do |post| %>
+            <h2>
+                <li><%= link_to post.title, post %></li>
+                
+            </h2>
+        <% end %>
+    </ul>
+</div>
 <br><br>
 
 <div class="center">
