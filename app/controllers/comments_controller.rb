@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     end
 
     def create
+        byebug
         @comment = current_user.comments.new(comment_params)
         if @comment.save
             redirect_to post_comment_path

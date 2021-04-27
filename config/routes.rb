@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   
   # authentication login
-  get '/auth/:provider/callback' => 'sessions#omniauth'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
   # logout route
   delete '/logout' => 'sessions#destroy'
 
   # nested routes 
+  resources :comments
   resources :users do 
     resources :posts, only: [:index, :new, :create, :show, :destroy]
   end
