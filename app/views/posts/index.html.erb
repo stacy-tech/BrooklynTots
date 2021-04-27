@@ -1,4 +1,4 @@
-<h1>Listing</h1><%= link_to "return to home", user_path(current_user) %>
+<h1>Listing</h1><%= link_to "return to home", user_path(@current_user) %>
 
 <div>
     <ul>
@@ -14,5 +14,5 @@
 <br><br>
 
 <div class="center"> 
-    <%= link_to "Create a New Post", new_user_post_path(current_user) %>   
+    <%= link_to "Create a New Post", new_user_post_path(@current_user) %>   
 </div>

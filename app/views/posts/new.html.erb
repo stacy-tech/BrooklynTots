@@ -22,9 +22,9 @@
             <br><br>
 
             <div class="center">
-                <%= link_to "Return to Home", user_path(current_user) %>
+                <%= link_to "Return to Home", user_path(@current_user) %>
                 <br><br>
-                <%= link_to "All Posts", user_posts_path(current_user) %>   
+                <%= link_to "All Posts", user_posts_path(@current_user) %>   
             </div>
 
         <% end %>
