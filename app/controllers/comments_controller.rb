@@ -13,8 +13,6 @@ class CommentsController < ApplicationController
     def create
         @post = Post.find(params[:post_id])
         @comment = @post.comments.new(comment_params)
-        #  require 'pry'
-        #  binding pry
         if @comment.save
             redirect_to post_path(@post)
         else

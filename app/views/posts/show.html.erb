@@ -1,11 +1,12 @@
 <h1><%= @post.title %></h1> 
-<p><%= @post.content %></p>
+<p><%= @post.content %></p> <br>
 
-<h2>Comments</h2>
- 
+<h2>Comments </h2>
+
 <% @comments.each do |comment| %>
     <%= comment.content %> <br>
 <% end %>
+
 
 <br><br>
 
@@ -13,8 +14,9 @@
     <%= link_to "Edit Post", edit_post_path(@current_user) %> 
     <br><br>
     <%= link_to "Add a Comment", new_post_comment_path(@current_user) %>  
-    <br><br>
-    <%= link_to "Delete Post", posts_path(@current_user) %>  
     <br><br> 
     <%= link_to "All Posts", user_posts_path(@current_user) %>   
 </div>
+
+<br>
+<%= button_to "delete", @post, :method => :delete %>
