@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
             flash[:error]= "This Post has been deleted" if params[:posts_id]
             @comment = Comment.new
         end
-
     end
 
     def create
