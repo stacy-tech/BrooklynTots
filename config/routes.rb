@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do 
-    resources :comments, only: [:new, :create, :show, :index]
+    resources :comments
   end
   
 end

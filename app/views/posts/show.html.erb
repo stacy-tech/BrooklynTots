@@ -1,5 +1,13 @@
-<h1><%= @posts.title %></h1> 
-<p><%= @posts.content %></p>
+<h1><%= @post.title %></h1> 
+<p><%= @post.content %></p>
+
+<h2>Comments</h2>
+ 
+<% @comments.each do |comment| %>
+    <%= comment.content %> <br>
+<% end %>
+
+<br><br>
 
 <div class="center">
     <%= link_to "Edit Post", edit_post_path(@current_user) %> 
