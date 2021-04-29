@@ -1,6 +1,6 @@
 <h1>Edit Previous Post</h1>
 
-<%= form_for(@Post) do |f| %> 
+<%= form_for Post.new do |f| %> 
 
     <%= f.label :title %>
     <%= f.text_field :title %>
