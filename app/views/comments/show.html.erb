@@ -1,0 +1,9 @@
+<h1>comments</h1><%= @comment.content %> 
+
+<br><br>
+<div>
+    <%= link_to "All Comments", post_comments_path(@current_user) %> 
+    <br><br>
+    <%= link_to "Return to Home", user_path(@current_user) %>
+    <br>
+</div>

@@ -1,2 +1,13 @@
-# <h1>Comments</h1>
+<h1>All Comments</h1>
+<div>
+    <li>
+        <% @comments.each do |comment| %>
+            <%= comment.content %>        
+        <% end %>
+    </li>
+</div>
+<br> 
+<%= link_to "Return to Home", user_path(@current_user) %>
+<br><br>
+
 

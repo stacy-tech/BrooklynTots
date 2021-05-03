@@ -1,19 +1,13 @@
 <h1><%= @post.title %></h1> 
 <p><%= @post.content %></p> <br>
 
-<h2>Comments </h2>
-
-<% @comments.each do |comment| %>
-    <%= comment.content %> <br>
-<% end %>
-
 
 <br><br>
 
 <div class="center">
     <%= link_to "Edit Post", edit_post_path(@current_user, @post) %> 
     <br><br>
-    <%= link_to "Add a Comment", new_post_comment_path(@current_user) %>  
+    <%= link_to "Add A Comment", new_post_comment_path(@post) %>  
     <br><br> 
     <%= link_to "All Posts", user_posts_path(@current_user) %>   
 </div>

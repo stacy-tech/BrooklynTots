@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.user = current_user
+        @post.creator = current_user
         if @post.save
             redirect_to post_path(@post)
         else
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        @comments = @post.comments
+        @comments = @post.comments 
     end
 
     def edit
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
     private
 
     def post_params 
-        params.require(:post).permit(:title, :content, :user_id)
+        params.require(:post).permit(:title, :content, :creator_id)
     end
 end
